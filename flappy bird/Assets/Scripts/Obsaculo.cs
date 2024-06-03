@@ -19,4 +19,14 @@ public class Obsaculo : MonoBehaviour
     {
         this.transform.Translate(Vector3.left * this.velocidade * Time.deltaTime);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        this.Destruir();
+    }
+
+    private void Destruir()
+    {
+        Destroy(this.gameObject);
+    }
 }
