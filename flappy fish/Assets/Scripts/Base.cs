@@ -1,24 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Base : MonoBehaviour
 {
     [SerializeField]
-    private float velocidade = 0.6f;
+    private float velocidade;
     private Vector3 posicaoInicial;
-    private float tamanhoDaImagem;
+    private float tamanhoImagemCena;
 
-    void Awake()
+    private void Awake()
     {
         this.posicaoInicial = this.transform.position;
-        this.tamanhoDaImagem = GetComponent<SpriteRenderer>().size.x;
+        float tamanhoDaImagemOriginal = GetComponent<SpriteRenderer>().size.x;
+        float escala = this.transform.localScale.x;
+        this.tamanhoImagemCena = tamanhoDaImagemOriginal * escala;
     }
-
     // Update is called once per frame
     void Update()
     {
-        float deslocamento = Mathf.Repeat(this.velocidade * Time.time, this.tamanhoDaImagem);
+        float deslocamento = Mathf.Repeat(this.velocidade * Time.time, tamanhoImagemCena);
         this.transform.position = this.posicaoInicial + Vector3.left * deslocamento;
+
     }
 }
