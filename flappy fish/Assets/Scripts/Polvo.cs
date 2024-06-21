@@ -10,7 +10,7 @@ public class Polvo : MonoBehaviour
     private float variacaoPosicaoY;
     private Vector3 posicaoPassaro;
     
-    private void awake()
+    private void Awake()
     {
         this.transform.Translate(Vector3.up * Random.Range(-variacaoPosicaoY, variacaoPosicaoY));
     }
