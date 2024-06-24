@@ -6,6 +6,7 @@ public class fish : MonoBehaviour
 {
     Rigidbody2D fisica;
     private Diretor diretor;
+    private Vector3 posicaoInicial;
 
     private void Awake()
     {
@@ -36,11 +37,6 @@ public class fish : MonoBehaviour
     {
         this.fisica.simulated = false;
         this.diretor.FinalizarJogo();
-    }
-    public void Reiniciar()
-    {
-        this.transform.position = this.posicaoInicial;
-        this.fisica.simulated = true;
     }
 
 }
