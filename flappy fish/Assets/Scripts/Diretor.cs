@@ -21,18 +21,26 @@ public class Diretor : MonoBehaviour
 
     private void Start()
     {
-        this.fish = GameObject.FindObjectsByType<Fish>();
-        this.uicontroler = GameObject.FindAnyObjectByType<UiControler>()
+        this.fish = GameObject.FindAnyObjectByType<Fish>();
+        this.uicontroler = GameObject.FindAnyObjectByType<UiControler>();
     }
 
     private void ReiniciarJogo()
     {
         this.imagemGameOver.SetActive(false);
         Time.timeScale = 1;
-        this.aviao.Reiniciar();
+        this.fish.Reiniciar();
         this.DestruirObstaculos();
         this.uicontroler.Reiniciar();
     }
 
+    private void DestruirObstaculos()
+    {
+        obsaculos[] obsaculos = GameObject.FindAnyObjectByType<Obstaculos>();
+        foreach(obsaculos obsaculo in obsaculos)
+        {
+            obsaculo.Destruir();
+        }
+    }
 
 }
