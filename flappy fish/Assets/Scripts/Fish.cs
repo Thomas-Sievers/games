@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fish : MonoBehaviour
+public class Fish : MonoBehaviour
 {
     Rigidbody2D fisica;
-    private Diretor diretor;
+    private Diretor Diretor;
     private Vector3 posicaoInicial;
 
     private void Awake()
     {
         this.fisica = GetComponent<Rigidbody2D>();
-        this.diretor = FindObjectOfType<Diretor>();
+        this.Diretor = FindObjectOfType<Diretor>();
     }
 
     // Update is called once per frame
@@ -36,7 +36,12 @@ public class fish : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         this.fisica.simulated = false;
-        this.diretor.FinalizarJogo();
+        this.Diretor.FinalizarJogo();
     }
 
+    public void Reiniciar()
+    {
+        this.transform.position = this.posicaoInicial;
+        this.fisica.simulated = true;
+    }
 }

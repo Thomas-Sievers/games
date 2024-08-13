@@ -21,7 +21,7 @@ public class obsaculos : MonoBehaviour
 
     private void Start()
     {
-        this.posicaoPassaro = GameObject.FindObjectOfType<fish>().transform.position;
+        this.posicaoPassaro = GameObject.FindObjectOfType<Fish>().transform.position;
         this.uicontroler = GameObject.FindObjectOfType<UiControler>();
     }
 
@@ -41,7 +41,7 @@ public class obsaculos : MonoBehaviour
         this.Destruir();
     }
 
-    private void Destruir()
+    public void Destruir()
     {
         Destroy(this.gameObject);
     }
