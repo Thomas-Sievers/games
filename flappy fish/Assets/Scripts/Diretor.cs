@@ -30,17 +30,17 @@ public class Diretor : MonoBehaviour
         this.imagemGameOver.SetActive(false);
         Time.timeScale = 1;
         this.fish.Reiniciar();
-        this.DestruirObstaculos();
-        this.uicontroler.Reiniciar();
+        //this.DestruirObstaculos();
+        //this.uicontroler.Reiniciar();
     }
 
-    private void DestruirObstaculos()
+    /* private void DestruirObstaculos()
     {
         obsaculos[] obsaculos = GameObject.FindAnyObjectByType<Obstaculos>();
         foreach(obsaculos obsaculo in obsaculos)
         {
             obsaculo.Destruir();
         }
-    }
+    }*/
 
 }

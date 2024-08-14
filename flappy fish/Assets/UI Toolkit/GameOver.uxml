@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-image: none; width: 100%; align-self: center; -unity-background-scale-mode: scale-to-fit; display: none; height: 0; justify-content: center;">
+        <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GameOver" style="justify-content: center; align-self: center; background-image: url(&quot;project://database/Assets/sprites/gameover.png?fileID=2800000&amp;guid=03ff54b81da9c6043a97b09ebe45487b&amp;type=3#gameover&quot;); width: 200px; height: 60px; align-items: center;" />
+    </ui:VisualElement>
+</ui:UXML>
