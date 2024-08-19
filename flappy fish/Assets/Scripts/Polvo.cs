@@ -18,7 +18,7 @@ public class Polvo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.posicaoPassaro = GameObject.FindObjectOfType<fish>().transform.position;
+        this.posicaoPassaro = GameObject.FindObjectOfType<Fish>().transform.position;
     }
 
     // Update is called once per frame

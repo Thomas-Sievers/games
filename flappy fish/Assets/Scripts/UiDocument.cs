@@ -21,4 +21,10 @@ public class UiControler : MonoBehaviour
         this.textoPontuacao = root.Q<Label>("pontos");
     }
 
+    public void Reiniciar()
+    {
+        this.pontos = 0;
+        this.textoPontuacao.text = this.pontos.ToString() ;
+    }
+
 }

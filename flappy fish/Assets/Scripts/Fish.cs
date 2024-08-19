@@ -5,13 +5,18 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     Rigidbody2D fisica;
-    private Diretor Diretor;
+    private Director Director;
     private Vector3 posicaoInicial;
 
     private void Awake()
     {
         this.fisica = GetComponent<Rigidbody2D>();
-        this.Diretor = FindObjectOfType<Diretor>();
+        this.posicaoInicial = this.transform.position;
+    }
+
+    private void Start()
+    {
+        this.Director = FindObjectOfType<Director>();
     }
 
     // Update is called once per frame
@@ -36,7 +41,7 @@ public class Fish : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         this.fisica.simulated = false;
-        this.Diretor.FinalizarJogo();
+        this.Director.FinalizarJogo();
     }
 
     public void Reiniciar()

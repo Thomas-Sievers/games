@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class obsaculos : MonoBehaviour
+public class Obsaculos : MonoBehaviour
 {
     [SerializeField]
     private float velocidade;
