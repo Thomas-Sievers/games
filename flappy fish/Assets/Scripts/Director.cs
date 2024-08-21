@@ -13,9 +13,11 @@ public class Director : MonoBehaviour
         this.gameOver = GameObject.FindObjectOfType<GameOverController>();
         this.fish = GameObject.FindObjectOfType<Fish>();
         this.pontucao = GameObject.FindObjectOfType<UiControler>();
+
     }
     public void FinalizarJogo()
     {
+        Debug.Log("Finalizou");
         Time.timeScale = 0;
         this.gameOver.OnGameOver();
     }
@@ -25,6 +27,8 @@ public class Director : MonoBehaviour
         Time.timeScale = 1;
         this.fish.Reiniciar();
         this.pontucao.Reiniciar();
+        this.DestruirObstaculos();
+        this.DestruirPolvo();
     }
 
     private void DestruirObstaculos()
@@ -32,7 +36,18 @@ public class Director : MonoBehaviour
         Obsaculos[] obstaculos = GameObject.FindObjectsOfType<Obsaculos>();
         foreach (Obsaculos obstaculo in obstaculos)
         {
+            Debug.Log("destruiu");
             obstaculo.Destruir();
+        }
+    }
+
+    private void DestruirPolvo()
+    {
+        Polvo[] polvos = GameObject.FindObjectsOfType<Polvo>();
+        foreach (Polvo polvo in polvos)
+        {
+            Debug.Log("destruiu");
+            polvo.Destruir();
         }
     }
 }

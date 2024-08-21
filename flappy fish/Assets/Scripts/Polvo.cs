@@ -32,7 +32,7 @@ public class Polvo : MonoBehaviour
         this.Destruir();
     }
 
-    private void Destruir()
+    public void Destruir()
     {
         Destroy(this.gameObject);
     }

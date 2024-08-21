@@ -8,6 +8,7 @@ public class GameOverController : MonoBehaviour
     private UIDocument _document;
     private VisualElement _gameOver;
     private Button _reiniciar;
+    private Director Director;
 
     private void Awake()
     {
@@ -17,8 +18,14 @@ public class GameOverController : MonoBehaviour
         _reiniciar.RegisterCallback<ClickEvent>(OnRestartClick);
     }
 
+    private void Start()
+    {
+        this.Director = FindObjectOfType<Director>();
+    }
+
     public void OnGameOver()
     {
+        Debug.Log("Ativou Game Over");
         _gameOver.style.display = DisplayStyle.Flex;
         _reiniciar.style.display = DisplayStyle.Flex;
     }
@@ -27,5 +34,7 @@ public class GameOverController : MonoBehaviour
     {
         _gameOver.style.display = DisplayStyle.None;
         _reiniciar.style.display = DisplayStyle.None;
+        this.Director.ReiniciarJogo();
+
     }
 }
